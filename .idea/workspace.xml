@@ -82,9 +82,13 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="358" y="74" key="CommitChangelistDialog2" timestamp="1578032925808">
+    <state x="358" y="74" key="CommitChangelistDialog2" timestamp="1578033490457">
       <screen x="0" y="23" width="1792" height="1031" />
     </state>
-    <state x="358" y="74" key="CommitChangelistDialog2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578032925808" />
+    <state x="358" y="74" key="CommitChangelistDialog2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578033490457" />
+    <state x="396" y="215" key="Vcs.Push.Dialog.v2" timestamp="1578033558861">
+      <screen x="0" y="23" width="1792" height="1031" />
+    </state>
+    <state x="396" y="215" key="Vcs.Push.Dialog.v2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578033558861" />
   </component>
 </project>

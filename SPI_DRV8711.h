@@ -1,9 +1,9 @@
 //
-// Created by gf on 8/23/19.
+// Created by jin on 8/23/19.
 //
 
-#ifndef GFMOTORV2_SPI_DRV8711_H
-#define GFMOTORV2_SPI_DRV8711_H
+#ifndef ASMC_SPI_DRV8711_H
+#define ASMC_SPI_DRV8711_H
 
 #include <SPI.h>
 #include "Register_DRV8711.h"
@@ -189,4 +189,4 @@ private:
     SPISettings _settings = SPISettings(500000, MSBFIRST, SPI_MODE0);
 };
 
-#endif //GFMOTORV2_SPI_DRV8711_H
+#endif //ASMC_SPI_DRV8711_H

@@ -1,9 +1,9 @@
 //
-// Created by gf on 8/23/19.
+// Created by jin on 8/23/19.
 //
 
-#ifndef GFMOTORV2_REGISTER_DRV8711_H
-#define GFMOTORV2_REGISTER_DRV8711_H
+#ifndef ASMC_REGISTER_DRV8711_H
+#define ASMC_REGISTER_DRV8711_H
 
 /* --COPYRIGHT--,BSD
  * Copyright (c) 2013, Texas Instruments Incorporated
@@ -139,4 +139,4 @@ struct STATUS_Register
 #endif /* REGISTERS_H_ */
 
 
-#endif //GFMOTORV2_REGISTER_DRV8711_H
+#endif //ASMC_REGISTER_DRV8711_H
