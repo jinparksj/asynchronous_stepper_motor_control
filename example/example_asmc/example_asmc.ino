@@ -1,4 +1,4 @@
-#include <GFMotorV2.h>
+#include <ASMC.h>
 #include <avr/wdt.h>
 
 
@@ -6,42 +6,32 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(BAUDRATE);
   while (!Serial && (millis() < 4000));
-
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   isWorking = isT1Working || isT2Working || isT3Working || isT4Working || isT5Working || isCooperating;
   if (!isWorking) {
-    input_BUS = SerialCom.ReadBusSerialPacket();
-    if (input_BUS != "") {
-      Serial.println(input_BUS);
-      ProcessCommand(input_BUS);
-      input_BUS = "";
-    }
-
-    input_USB = SerialCom.ReadUSBSerialPacket();
-    if (input_USB != "") {
+    if (Serial.available() > 0) {
+      input_USB = Serial.readStringUntil('/');
       Serial.println(input_USB);
-      is_usb_serial = true;
-      ProcessCommand(input_USB);
+      Command(input_USB);
       is_usb_serial = false;
       input_USB = "";
     }
   }
-
   delay(100);
 }
 
 ISR(TIMER1_COMPA_vect)
 {
   ResponseMotorA = MOTOR_A.isrPulse_TIMER1();
-  //  if (digitalRead(MOTOR_A._STLFLT) == 1) {
-  //    MOTOR_A.SetAtHome();
-  //    MOTOR_A.ResetMotors();
-  //    reboot();
-  //    InitializeMotors();
-  //  }
+  if (digitalRead(MOTOR_A._STLFLT) == 1) {
+    MOTOR_A.SetAtHome();
+    MOTOR_A.ResetMotors();
+    reboot();
+    InitializeMotors();
+  }
   if (ResponseMotorA == 1) {
     MOTOR_B.SetAtHome();
     ResponseMotorA = 0;
@@ -58,12 +48,12 @@ ISR(TIMER1_COMPA_vect)
 ISR(TIMER3_COMPA_vect)
 {
   ResponseMotorB = MOTOR_B.isrPulse_TIMER3();
-  //  if (digitalRead(MOTOR_B._STLFLT) == 1) {
-  //    MOTOR_B.SetAtHome();
-  //    MOTOR_B.ResetMotors();
-  //    reboot();
-  //    InitializeMotors();
-  //  }
+  if (digitalRead(MOTOR_B._STLFLT) == 1) {
+    MOTOR_B.SetAtHome();
+    MOTOR_B.ResetMotors();
+    reboot();
+    InitializeMotors();
+  }
   if (ResponseMotorB == 2) {
     MOTOR_A.SetAtHome();
     ResponseMotorB = 0;
@@ -80,12 +70,12 @@ ISR(TIMER3_COMPA_vect)
 ISR(TIMER4_COMPA_vect)
 {
   ResponseMotorZ1 = MOTOR_Z1.isrPulse_TIMER4();
-  //  if (digitalRead(MOTOR_Z1._STLFLT) == 1) {
-  //    MOTOR_Z1.SetAtHome();
-  //    MOTOR_Z1.ResetMotors();
-  //    reboot();
-  //    InitializeMotors();
-  //  }
+  if (digitalRead(MOTOR_Z1._STLFLT) == 1) {
+    MOTOR_Z1.SetAtHome();
+    MOTOR_Z1.ResetMotors();
+    reboot();
+    InitializeMotors();
+  }
   if (ResponseMotorZ1 == 3) {
     ResponseMotorZ1 = 0;
     isAtHomeZ1 = true;
@@ -111,12 +101,12 @@ ISR(TIMER5_COMPA_vect)
   }
   else {
     ResponseMotorZ2 = MOTOR_Z2.isrPulse_TIMER5();
-    //  if (digitalRead(MOTOR_Z2._STLFLT) == 1) {
-    //    MOTOR_Z2.SetAtHome();
-    //    MOTOR_Z2.ResetMotors();
-    //    reboot();
-    //    InitializeMotors();
-    //  }
+    if (digitalRead(MOTOR_Z2._STLFLT) == 1) {
+      MOTOR_Z2.SetAtHome();
+      MOTOR_Z2.ResetMotors();
+      reboot();
+      InitializeMotors();
+    }
     if (ResponseMotorZ2 == 4) {
       ResponseMotorZ2 = 0;
       isAtHomeZ2 = true;
