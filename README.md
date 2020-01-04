@@ -1,17 +1,17 @@
 # Asynchronous Stepper Motor Position Control
 Controlling __4__ __stepper__ __motors__ with **1 Arduino Mega** by using **16 bit timers**
 
-1.**Hardware**
+**1. Hardware**
 - Arduino Mega
 - Four Stepper Motor, Syringe pump
 - 'DRV8711' Texas Instruments Motor Driver Module (Polulu)
 - Support microstepping
 
-2.**Important Notice**
+**2. Important Notice**
 - Assigned pin number of Arduino Mega is based on my configuration. User can change the pin assignment.
 - _STEP, _DIR, _SS, _SLEEP, _STLFLT, _HOME, and _RESET are should be assigned.
 
-3.Class Declaration
+**3. Class Declaration**
     
     ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned int min_speed, int microstepping, float lead, bool newboard=false) 
 
@@ -21,7 +21,7 @@ Controlling __4__ __stepper__ __motors__ with **1 Arduino Mega** by using **16 b
 - **microstepping** is calculated as 2^microstepping. If you want to choose 8 microstepping, you can put 3.
 - **lead** is the unit number for changing revolution to linear acutation.
 
-4.SPI Communication
+**4. SPI Communication**
 
 - Through SPI communication, Arduino Mega can set motor driver, DRV8711. The SPI communication is based on pre-set pins of Arduino Mega.
 You can refer to the Arduino Website for SPI communication.
