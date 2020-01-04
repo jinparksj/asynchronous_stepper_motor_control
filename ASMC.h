@@ -26,7 +26,7 @@
 
 class ASMC {
 public:
-    ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned int  min_speed, int microstepping, float lead, bool newboard=false);
+    ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned int  min_speed, int microstepping, float lead);
 
 public:
     void BootUpSPI();

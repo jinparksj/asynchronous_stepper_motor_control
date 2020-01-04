@@ -4,7 +4,7 @@
 
 #include "ASMC.h"
 
-ASMC::ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned int min_speed, int microstepping, float lead, bool newboard=false){
+ASMC::ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned int min_speed, int microstepping, float lead){
     _MCURRENT = MotorCurrent;
     _microstepping = microstepping;
     _max_speed = max_speed;
