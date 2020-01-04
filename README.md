@@ -4,7 +4,7 @@ Controlling __4__ __stepper__ __motors__ with **1 Arduino Mega** by using **16 b
 **1. Hardware**
 - Arduino Mega
 - Four Stepper Motor, Syringe pump
-- 'DRV8711' Texas Instruments Motor Driver Module (Polulu)
+- __DRV8711__ Texas Instruments Motor Driver Module (Polulu)
 - Support microstepping
 
 **2. Important Notice**
