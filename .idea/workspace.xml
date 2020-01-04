@@ -9,18 +9,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ffcad34-11d4-4060-9f04-d39aa9410f77" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/asynchronous_stepper_motor_control.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ASMC.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ASMC.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Register_DRV8711.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SPI_DRV8711.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SPI_DRV8711.h" afterDir="false" />
+    <list default="true" id="4ffcad34-11d4-4060-9f04-d39aa9410f77" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASMC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ASMC.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,21 +65,41 @@
       <option name="presentableId" value="Default" />
       <updated>1578032897369</updated>
       <workItem from="1578032899183" duration="92000" />
-      <workItem from="1578033135757" duration="328000" />
+      <workItem from="1578033135757" duration="671000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1578033490578</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578033490578</updated>
+    </task>
+    <task id="LOCAL-00002" summary="documentation starts">
+      <created>1578033695841</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578033695841</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="documentation starts" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation starts" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="358" y="74" key="CommitChangelistDialog2" timestamp="1578033490457">
+    <state x="358" y="74" key="CommitChangelistDialog2" timestamp="1578033695749">
       <screen x="0" y="23" width="1792" height="1031" />
     </state>
-    <state x="358" y="74" key="CommitChangelistDialog2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578033490457" />
-    <state x="396" y="215" key="Vcs.Push.Dialog.v2" timestamp="1578033558861">
+    <state x="358" y="74" key="CommitChangelistDialog2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578033695749" />
+    <state x="396" y="215" key="Vcs.Push.Dialog.v2" timestamp="1578033702079">
       <screen x="0" y="23" width="1792" height="1031" />
     </state>
-    <state x="396" y="215" key="Vcs.Push.Dialog.v2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578033558861" />
+    <state x="396" y="215" key="Vcs.Push.Dialog.v2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578033702079" />
   </component>
 </project>
