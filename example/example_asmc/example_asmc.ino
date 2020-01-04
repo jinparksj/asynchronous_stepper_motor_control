@@ -1,11 +1,12 @@
 #include <ASMC.h>
 #include <avr/wdt.h>
-
+#include "globals.h"
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(BAUDRATE);
   while (!Serial && (millis() < 4000));
+  InitializeMotors();
 }
 
 void loop() {
@@ -16,7 +17,6 @@ void loop() {
       input_USB = Serial.readStringUntil('/');
       Serial.println(input_USB);
       Command(input_USB);
-      is_usb_serial = false;
       input_USB = "";
     }
   }

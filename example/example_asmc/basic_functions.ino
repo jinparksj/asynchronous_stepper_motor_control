@@ -1,3 +1,16 @@
+void InitializeMotors() {
+  MOTOR_A.InitializeMotors();
+  delay(delay_motor);
+  MOTOR_B.InitializeMotors();
+  delay(delay_motor);
+  MOTOR_Z1.InitializeMotors();
+  delay(delay_motor);
+  MOTOR_Z2.InitializeMotors();
+  delay(delay_motor);
+  MOTOR_P.InitializeMotors();
+  delay(delay_motor);
+}
+
 void ConvertXYtoAB(float moving_distance_x, float moving_distance_y) {
   /*
      HBOT CASE 1
@@ -54,7 +67,6 @@ void ALLHOME() {
   currentY = 0;
   currentA = 0;
   currentB = 0;
-  HomeCentrifuge();
 
   Z1HOME();
   PHOME();

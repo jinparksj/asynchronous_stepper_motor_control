@@ -4,7 +4,6 @@ void Command(String string_input) {
   String running_command = string_input.substring(1);
   char runtype = running_command[0];
   String runvalue = running_command.substring(1);
-  Serial.print("Sender : "); Serial.println(senderID);
   Serial.print("Running Command: "); Serial.println(running_command);
 
   isWorking = true;

@@ -1,9 +1,3 @@
-ASMC MOTOR_A(1, 1.4, high_max_speed_AB, high_min_speed_AB, 2, 20);
-ASMC MOTOR_B(2, 1.4, high_max_speed_AB, high_min_speed_AB, 2, 20);
-ASMC MOTOR_Z1(3, 0.8, high_max_speed_Z1, high_min_speed_Z1, 2, 25.4);
-ASMC MOTOR_Z2(5, 0.8, high_max_speed_Z2, high_min_speed_Z2, 2, 25.4);
-ASMC MOTOR_P(6, 0.2, high_max_speed_P, high_min_speed_P, 1, 305.2);
-
 const int BAUDRATE = 9600;
 const int delay_motor = 300;
 const int belt_motor_delay = 10;
@@ -31,6 +25,12 @@ int high_max_speed_P = 1000;
 int high_min_speed_P = 900;
 int low_max_speed_P = 100;
 int low_min_speed_P = 50;
+
+ASMC MOTOR_A(1, 1.4, high_max_speed_AB, high_min_speed_AB, 2, 20);
+ASMC MOTOR_B(2, 1.4, high_max_speed_AB, high_min_speed_AB, 2, 20);
+ASMC MOTOR_Z1(3, 0.8, high_max_speed_Z1, high_min_speed_Z1, 2, 25.4);
+ASMC MOTOR_Z2(5, 0.8, high_max_speed_Z2, high_min_speed_Z2, 2, 25.4);
+ASMC MOTOR_P(6, 0.2, high_max_speed_P, high_min_speed_P, 1, 305.2);
 
 bool isWorking = false;
 bool isT1Working = false;
@@ -78,3 +78,4 @@ float currentP = 0;
 float targetP = 0;
 
 float XY_HOME_SPACE = 25;
+int pump_home_position = -1100;
