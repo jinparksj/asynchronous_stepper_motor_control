@@ -2,9 +2,10 @@
 Controlling __4__ __stepper__ __motors__ with **1 Arduino Mega** by using **16 bit timers**
 
 **1. Hardware**
-- Arduino Mega
+- **Arduino Mega**
 - Four Stepper Motor, Syringe pump
-- __DRV8711__ Texas Instruments Motor Driver Module (Polulu)
+- Stepper position is set based on optical homing sensor and PWM step during moving
+- __DRV8711__ Texas Instruments Motor Driver Module (**Polulu**)
 - Support microstepping
 
 **2. Important Notice**
