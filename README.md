@@ -7,6 +7,8 @@ Controlling __4__ __stepper__ __motors__ with **1 Arduino Mega** by using **16 b
 - Stepper position is set based on optical homing sensor and PWM step during moving
 - __DRV8711__ Texas Instruments Motor Driver Module (**Polulu**)
 - Support microstepping
+- Support for 5 hardware, X and Y (Motor A and B HBOT), Z1, Z2, and Syringe Pump 
+
 
 **2. Important Notice**
 - Assigned pin number of Arduino Mega is based on my configuration. User can change the pin assignment.
@@ -34,4 +36,7 @@ Please refer to SPI_DRV8711.cpp.
 
 **5. Stall/Fault Detection**
 - There are three main parameters of Stall and Falut detection.
--  
+1) Sampling Time of Back EMF - 0: 50us, 1: 100us, 2: 200us, 3: 300us, 4: 400us, 5: 600us, 6: 800us, 7: 1000us
+2) Stall Detection Count by Inside Counter in DRV8711 (Please look at the page 23 in '/source/drv8711.pdf'.) - 0: Count 1, 1: Count 2, 2: Count 4, 3: Count 8 
+3) Stall Detection Threshold - 0 to 255 -> higher value, more sensitive to stall
+

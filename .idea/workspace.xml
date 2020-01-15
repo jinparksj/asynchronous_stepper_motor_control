@@ -9,11 +9,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ffcad34-11d4-4060-9f04-d39aa9410f77" name="Default Changelist" comment="">
+    <list default="true" id="4ffcad34-11d4-4060-9f04-d39aa9410f77" name="Default Changelist" comment="update stall fault detection">
+      <change afterPath="$PROJECT_DIR$/source/drv8711.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_asmc/basic_functions.ino" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_asmc/basic_functions.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_asmc/example_asmc.ino" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_asmc/example_asmc.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_asmc/globals.h" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_asmc/globals.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +71,7 @@
       <workItem from="1578033135757" duration="671000" />
       <workItem from="1578176239347" duration="2285000" />
       <workItem from="1578200776677" duration="86000" />
-      <workItem from="1579121866259" duration="1362000" />
+      <workItem from="1579121866259" duration="1928000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1578033490578</created>
@@ -145,7 +144,8 @@
     <MESSAGE value="documentation starts" />
     <MESSAGE value="`documentation starts`" />
     <MESSAGE value="update markdown" />
-    <option name="LAST_COMMIT_MESSAGE" value="update markdown" />
+    <MESSAGE value="update stall fault detection" />
+    <option name="LAST_COMMIT_MESSAGE" value="update stall fault detection" />
   </component>
   <component name="WindowStateProjectService">
     <state x="358" y="74" key="CommitChangelistDialog2" timestamp="1578178515286">
