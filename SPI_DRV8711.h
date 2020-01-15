@@ -2,8 +2,8 @@
 // Created by jin on 8/23/19.
 //
 
-#ifndef ASMC_SPI_DRV8711_H
-#define ASMC_SPI_DRV8711_H
+#ifndef GFMOTORV2_SPI_DRV8711_H
+#define GFMOTORV2_SPI_DRV8711_H
 
 #include <SPI.h>
 #include "Register_DRV8711.h"
@@ -49,6 +49,12 @@ public:
     struct DRIVE_Register 	G_DRIVE_REG;
     struct STATUS_Register 	G_STATUS_REG;
 
+
+public:
+    unsigned int _TORQ_SMPLTH = _TORQ_SMPLTH_100US; //Default
+    unsigned int _STALL_SDCNT = _STALL_SDCNT_2STEP;
+    unsigned int _STALL_SDTHR = 0x30; //Default: Sets stall detect threshold, correct setting determined experimentally
+
     //0x00 CTRL Register
 private:
     unsigned int _CTRL_ADDR = 0x00;
@@ -88,7 +94,7 @@ private:
     unsigned int _TORQ_SMPLTH_600US = 0x00;
     unsigned int _TORQ_SMPLTH_800US = 0x00;
     unsigned int _TORQ_SMPLTH_1000US = 0x00;
-    unsigned int _TORQ_SMPLTH = _TORQ_SMPLTH_100US; //Default
+
 
     //0x02 OFF Register
 private:
@@ -121,12 +127,10 @@ private:
     //0x05 STALL Register
 private:
     unsigned int _STALL_ADDR = 0x05;
-    unsigned int _STALL_SDTHR = 0x30; //Default: Sets stall detect threshold, correct setting determined experimentally
     unsigned int _STALL_SDCNT_1STEP = 0x00;
     unsigned int _STALL_SDCNT_2STEP = 0x01;
     unsigned int _STALL_SDCNT_4STEP = 0x02;
     unsigned int _STALL_SDCNT_8STEP = 0x03;
-    unsigned int _STALL_SDCNT = _STALL_SDCNT_2STEP;
     unsigned int _STALL_VDIV_DIV4 = 0x03;
     unsigned int _STALL_VDIV_DIV8 = 0x02;
     unsigned int _STALL_VDIV_DIV16 = 0x01;
@@ -189,4 +193,4 @@ private:
     SPISettings _settings = SPISettings(500000, MSBFIRST, SPI_MODE0);
 };
 
-#endif //ASMC_SPI_DRV8711_H
+#endif //GFMOTORV2_SPI_DRV8711_H

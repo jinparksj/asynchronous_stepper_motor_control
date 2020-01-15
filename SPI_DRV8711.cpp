@@ -26,7 +26,7 @@ SPI_DRV8711::SPI_DRV8711(int SCSPIN, int SLEEPPIN, float motorCurrent, int micro
 
     // TORQUE Register
     G_TORQUE_REG.Address = _TORQ_ADDR;
-    G_TORQUE_REG.SIMPLTH = _TORQ_SMPLTH_50US;  //50uS Back EMF Sample Threshold
+    G_TORQUE_REG.SMPLTH = _TORQ_SMPLTH;  //50uS Back EMF Sample Threshold
     G_TORQUE_REG.TORQUE  = _TORQ_TORQ;  //with ISGAIN set to 10 this gives about 1.5 AMP Current Chopper
     //1000 0 000  01000110
 
@@ -98,7 +98,7 @@ void SPI_DRV8711::WriteAllRegisters(){
     ReadWrite(dataHi, dataLo);
 
     // Write TORQUE Register
-    dataHi = REGWRITE | (G_TORQUE_REG.Address << 4) | (G_TORQUE_REG.SIMPLTH);
+    dataHi = REGWRITE | (G_TORQUE_REG.Address << 4) | (G_TORQUE_REG.SMPLTH);
     dataLo = G_TORQUE_REG.TORQUE;
     ReadWrite(dataHi, dataLo);
 
@@ -186,7 +186,7 @@ void SPI_DRV8711::ReadAllRegisters(){
     dataHi = REGREAD | (G_TORQUE_REG.Address << 4);
     readData = ReadWrite(dataHi, dataLo);
     Serial.println(readData, BIN);
-    G_TORQUE_REG.SIMPLTH    = ((readData >> 8) & 0x0007);
+    G_TORQUE_REG.SMPLTH    = ((readData >> 8) & 0x0007);
     G_TORQUE_REG.TORQUE     = ((readData >> 0) & 0x00FF);
     Serial.print("TORQUE = ");
     Serial.println(G_TORQUE_REG.TORQUE, HEX);
@@ -334,7 +334,7 @@ void SPI_DRV8711::Write_TORQUE(float motor_current){
     delay(SPI_delay);
     G_TORQUE_REG.Address = _TORQ_ADDR;
     delay(SPI_delay);
-    G_TORQUE_REG.SIMPLTH = _TORQ_SMPLTH_50US;  //50uS Back EMF Sample Threshold
+    G_TORQUE_REG.SMPLTH = _TORQ_SMPLTH;  //50uS Back EMF Sample Threshold
     delay(SPI_delay);
     G_TORQUE_REG.TORQUE  = _TORQ_TORQ;  //with ISGAIN set to 10 this gives about 1.5 AMP Current Chopper
     //1000 0 000  01000110
@@ -343,7 +343,7 @@ void SPI_DRV8711::Write_TORQUE(float motor_current){
     unsigned char dataLo = 0x00;
 
     // Write TORQUE Register
-    dataHi = REGWRITE | (G_TORQUE_REG.Address << 4) | (G_TORQUE_REG.SIMPLTH);
+    dataHi = REGWRITE | (G_TORQUE_REG.Address << 4) | (G_TORQUE_REG.SMPLTH);
     delay(SPI_delay);
     dataLo = G_TORQUE_REG.TORQUE;
     delay(SPI_delay);
@@ -515,7 +515,7 @@ void SPI_DRV8711::Read_TORQUE() {
     dataHi = REGREAD | (G_TORQUE_REG.Address << 4);
     readData = ReadWrite(dataHi, dataLo);
     Serial.println(readData, BIN);
-    G_TORQUE_REG.SIMPLTH    = ((readData >> 8) & 0x0007);
+    G_TORQUE_REG.SMPLTH    = ((readData >> 8) & 0x0007);
     G_TORQUE_REG.TORQUE     = ((readData >> 0) & 0x00FF);
     Serial.print("TORQUE = ");
     Serial.println(G_TORQUE_REG.TORQUE, HEX);

@@ -67,7 +67,7 @@ struct TORQUE_Register
 {
     unsigned int Address;	// bits 14-12
     /* Reserved */ 			// bit 11
-    unsigned int SIMPLTH;  	// bits 10-8
+    unsigned int SMPLTH;  	// bits 10-8
     unsigned int TORQUE;	// bits 7-0
 };
 
