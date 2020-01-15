@@ -32,7 +32,7 @@ int homing_speed_Z2 = 2000;
 int homing_speed_P = 900;
 
 ASMC MOTOR_A(1, 1.4, high_max_speed_AB, high_min_speed_AB, homing_speed_AB, 2, 20);
-ASMC MOTOR_B(2, 1.4, high_max_speed_AB, high_min_speed_AB, homing_speed_AB,2, 20);
+ASMC MOTOR_B(2, 1.4, high_max_speed_AB, high_min_speed_AB, homing_speed_AB, 2, 20);
 ASMC MOTOR_Z1(3, 0.8, high_max_speed_Z1, high_min_speed_Z1, homing_speed_Z1, 2, 25.4);
 ASMC MOTOR_Z2(5, 0.8, high_max_speed_Z2, high_min_speed_Z2, homing_speed_Z2, 2, 25.4);
 ASMC MOTOR_P(6, 0.2, high_max_speed_P, high_min_speed_P, homing_speed_P, 1, 305.2);
@@ -84,3 +84,11 @@ float targetP = 0;
 
 float XY_HOME_SPACE = 25;
 int pump_home_position = -1100;
+
+int count_recovery = 0;
+int total_count_recovery = 0;
+int limit_total_recovery = 30;
+int limit_one_recovery = 10;
+
+int direction_recovery_z1 = 1;
+int direction_recovery_z2 = 1;

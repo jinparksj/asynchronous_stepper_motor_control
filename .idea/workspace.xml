@@ -11,12 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4ffcad34-11d4-4060-9f04-d39aa9410f77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASMC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ASMC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASMC.h" beforeDir="false" afterPath="$PROJECT_DIR$/ASMC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Register_DRV8711.h" beforeDir="false" afterPath="$PROJECT_DIR$/Register_DRV8711.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPI_DRV8711.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SPI_DRV8711.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPI_DRV8711.h" beforeDir="false" afterPath="$PROJECT_DIR$/SPI_DRV8711.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example_asmc/basic_functions.ino" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_asmc/basic_functions.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example_asmc/example_asmc.ino" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_asmc/example_asmc.ino" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/example_asmc/globals.h" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_asmc/globals.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,7 +72,7 @@
       <workItem from="1578033135757" duration="671000" />
       <workItem from="1578176239347" duration="2285000" />
       <workItem from="1578200776677" duration="86000" />
-      <workItem from="1579121866259" duration="762000" />
+      <workItem from="1579121866259" duration="1362000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1578033490578</created>

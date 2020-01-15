@@ -169,6 +169,7 @@ void XYRUN(float targetX, float targetY) {
 void Z1HOME() {
   //LIFT Z1
   isAtHomeZ1 = false;
+  Z1RUN(5 * direction_recovery_z1);
   MOTOR_Z1.Home();
   while (!isAtHomeZ1) {
     Serial.print("Z1");
@@ -182,7 +183,7 @@ void Z2HOME() {
   //LIFT Z2
   isPumpWorking = false;
   isAtHomeZ2 = false;
-  Z2RUN(15);
+  Z2RUN(15 * direction_recovery_z2);
   MOTOR_Z2.Home();
   while (!isAtHomeZ2) {
     Serial.print("Z2");
@@ -313,4 +314,56 @@ void LowSpeedMode(String motor_id) {
     MOTOR_P.Begin(low_max_speed_P, low_min_speed_P);
   }
   delay(delay_motor);
+}
+
+void RECOVERY_XYZTP() {
+  Serial.println("Recovery XYZT");
+  Z1HOME();
+  Z2HOME();
+
+  bool isAtHomeA = MOTOR_A.CheckAtHome();
+  bool isAtHomeB = MOTOR_B.CheckAtHome();
+
+  if ((isAtHomeA == true) && (isAtHomeB == true)) {
+    //Out of edge, when it is at home, others just go next
+    XYRUN(XY_HOME_SPACE, XY_HOME_SPACE);
+    //Y homing
+    YHOME();
+    //X homing
+    XHOME();
+  }
+
+  if (isAtHomeB == false) {
+    YHOME();
+  }
+
+  if (isAtHomeA == false) {
+    XHOME();
+  }
+
+  XYRUN(XY_HOME_SPACE, XY_HOME_SPACE);
+  YHOME();
+  XHOME();
+
+
+  currentX = 0;
+  currentY = 0;
+  currentA = 0;
+  currentB = 0;
+
+  XYRUN(XY_HOME_SPACE, XY_HOME_SPACE);
+  Z1HOME();
+  PHOME();
+  delay(100);
+  Z1HOME();
+  YHOME();
+  XHOME();
+
+  currentP = 0;
+  currentX = 0;
+  currentY = 0;
+  currentA = 0;
+  currentB = 0;
+  currentZ1 = 0;
+  currentZ2 = 0;
 }
