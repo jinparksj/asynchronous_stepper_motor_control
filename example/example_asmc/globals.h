@@ -31,11 +31,14 @@ int homing_speed_Z1 = 2000;
 int homing_speed_Z2 = 2000;
 int homing_speed_P = 900;
 
-ASMC MOTOR_A(1, 1.4, high_max_speed_AB, high_min_speed_AB, homing_speed_AB, 2, 20);
-ASMC MOTOR_B(2, 1.4, high_max_speed_AB, high_min_speed_AB, homing_speed_AB, 2, 20);
-ASMC MOTOR_Z1(3, 0.8, high_max_speed_Z1, high_min_speed_Z1, homing_speed_Z1, 2, 25.4);
-ASMC MOTOR_Z2(5, 0.8, high_max_speed_Z2, high_min_speed_Z2, homing_speed_Z2, 2, 25.4);
-ASMC MOTOR_P(6, 0.2, high_max_speed_P, high_min_speed_P, homing_speed_P, 1, 305.2);
+//   int _sampling_time_BEMF = 1; //0: 50us, 1: 100us, 2: 200us, 3: 300us, 4: 400us, 5: 600us, 6: 800us, 7: 1000us
+//   int _stall_detection_count = 0; //0~3
+//   int _stall_detection_threshold = 40; //0~255
+ASMC MOTOR_A(1, 1.4, high_max_speed_AB, high_min_speed_AB, homing_speed_AB, 2, 20, 2, 3, 50);//higher -> more sensitive
+ASMC MOTOR_B(2, 1.4, high_max_speed_AB, high_min_speed_AB, homing_speed_AB, 2, 20, 2, 3, 50);//higher -> more sensitive
+ASMC MOTOR_Z1(3, 0.8, high_max_speed_Z1, high_min_speed_Z1, homing_speed_Z1, 2, 25.4, 3, 3, 20);
+ASMC MOTOR_Z2(5, 0.8, high_max_speed_Z2, high_min_speed_Z2, homing_speed_Z2, 2, 25.4, 4, 3, 15);
+ASMC MOTOR_P(6, 0.2, high_max_speed_P, high_min_speed_P, homing_speed_P, 1, 305.2, 7, 3, 0); //0.763 * 200 full step * 2 microstepping
 
 bool isWorking = false;
 bool isT1Working = false;

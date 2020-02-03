@@ -10,11 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ffcad34-11d4-4060-9f04-d39aa9410f77" name="Default Changelist" comment="update stall fault detection">
-      <change afterPath="$PROJECT_DIR$/source/drv8711.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASMC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ASMC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASMC.h" beforeDir="false" afterPath="$PROJECT_DIR$/ASMC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example_asmc/globals.h" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_asmc/globals.h" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,19 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="last_opened_file_path" value="$USER_HOME$/arduino-1.8.11/libraries/GFMotorV2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -72,6 +61,7 @@
       <workItem from="1578176239347" duration="2285000" />
       <workItem from="1578200776677" duration="86000" />
       <workItem from="1579121866259" duration="1928000" />
+      <workItem from="1580691780765" duration="4174000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1578033490578</created>
@@ -133,7 +123,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -152,10 +144,18 @@
       <screen x="0" y="23" width="1792" height="1031" />
     </state>
     <state x="358" y="74" key="CommitChangelistDialog2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578178515286" />
+    <state x="1071" y="1379" key="FileChooserDialogImpl" timestamp="1580691848854">
+      <screen x="323" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="1071" y="1379" key="FileChooserDialogImpl/323.1080.1920.1080/65.24.2495.1056@323.1080.1920.1080" timestamp="1580691848854" />
     <state x="396" y="215" key="Vcs.Push.Dialog.v2" timestamp="1578178516569">
       <screen x="0" y="23" width="1792" height="1031" />
     </state>
     <state x="396" y="215" key="Vcs.Push.Dialog.v2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578178516569" />
+    <state x="945" y="1449" key="com.intellij.ide.util.TipDialog" timestamp="1580691782900">
+      <screen x="323" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="945" y="1449" key="com.intellij.ide.util.TipDialog/323.1080.1920.1080/65.24.2495.1056@323.1080.1920.1080" timestamp="1580691782900" />
     <state x="480" y="295" key="git4idea.merge.GitPullDialog" timestamp="1578176248110">
       <screen x="0" y="23" width="1792" height="1031" />
     </state>
