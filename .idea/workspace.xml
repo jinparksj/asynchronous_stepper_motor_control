@@ -9,12 +9,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ffcad34-11d4-4060-9f04-d39aa9410f77" name="Default Changelist" comment="update stall fault detection">
+    <list default="true" id="4ffcad34-11d4-4060-9f04-d39aa9410f77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/source/Mega_pinout.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASMC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ASMC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASMC.h" beforeDir="false" afterPath="$PROJECT_DIR$/ASMC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_asmc/globals.h" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_asmc/globals.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/arduino-1.8.11/libraries/GFMotorV2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/source" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -61,7 +64,7 @@
       <workItem from="1578176239347" duration="2285000" />
       <workItem from="1578200776677" duration="86000" />
       <workItem from="1579121866259" duration="1928000" />
-      <workItem from="1580691780765" duration="4174000" />
+      <workItem from="1580691780765" duration="4839000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1578033490578</created>
@@ -112,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578178515372</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update scurve characteristics of motor">
+      <created>1580697265420</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580697265420</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,21 +147,24 @@
     <MESSAGE value="`documentation starts`" />
     <MESSAGE value="update markdown" />
     <MESSAGE value="update stall fault detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="update stall fault detection" />
+    <MESSAGE value="update scurve characteristics of motor" />
+    <option name="LAST_COMMIT_MESSAGE" value="update scurve characteristics of motor" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="358" y="74" key="CommitChangelistDialog2" timestamp="1578178515286">
-      <screen x="0" y="23" width="1792" height="1031" />
+    <state x="563" y="76" key="CommitChangelistDialog2" timestamp="1580697265344">
+      <screen x="65" y="24" width="2495" height="1056" />
     </state>
     <state x="358" y="74" key="CommitChangelistDialog2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578178515286" />
+    <state x="563" y="76" key="CommitChangelistDialog2/323.1080.1920.1080/65.24.2495.1056@65.24.2495.1056" timestamp="1580697265344" />
     <state x="1071" y="1379" key="FileChooserDialogImpl" timestamp="1580691848854">
       <screen x="323" y="1080" width="1920" height="1080" />
     </state>
     <state x="1071" y="1379" key="FileChooserDialogImpl/323.1080.1920.1080/65.24.2495.1056@323.1080.1920.1080" timestamp="1580691848854" />
-    <state x="396" y="215" key="Vcs.Push.Dialog.v2" timestamp="1578178516569">
-      <screen x="0" y="23" width="1792" height="1031" />
+    <state x="616" y="221" key="Vcs.Push.Dialog.v2" timestamp="1580697270169">
+      <screen x="65" y="24" width="2495" height="1056" />
     </state>
     <state x="396" y="215" key="Vcs.Push.Dialog.v2/-357.-1057.2560.1057/0.23.1792.1031@0.23.1792.1031" timestamp="1578178516569" />
+    <state x="616" y="221" key="Vcs.Push.Dialog.v2/323.1080.1920.1080/65.24.2495.1056@65.24.2495.1056" timestamp="1580697270169" />
     <state x="945" y="1449" key="com.intellij.ide.util.TipDialog" timestamp="1580691782900">
       <screen x="323" y="1080" width="1920" height="1080" />
     </state>

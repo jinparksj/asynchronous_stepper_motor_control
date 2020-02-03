@@ -10,6 +10,25 @@ Controlling __4__ __stepper__ __motors__ with **1 Arduino Mega** by using **16 b
 - Support microstepping
 - Support for 6 hardware, X and Y (Motor A and B HBOT), Z1, Z2, Syringe Pump, and more 
 
+- Mega Pin Map - Pin is matched with Arduino Mega pin map 
+
+_STEP = A0;
+
+_DIR = A1;
+
+_SS = 31;
+
+_SLEEP = 39;
+
+_STLFLT = 22;
+
+_HOME = A8;
+
+_RESET = 48;
+
+![Mega Pin Map](./source/Mega_pinout.jpg)
+
+
 
 **2. Important Notice**
 - Assigned pin number of Arduino Mega is based on my configuration. User can change the pin assignment.
