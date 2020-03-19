@@ -26,11 +26,16 @@ int high_min_speed_P = 900;
 int low_max_speed_P = 100;
 int low_min_speed_P = 50;
 
-ASMC MOTOR_A(1, 1.4, high_max_speed_AB, high_min_speed_AB, 2, 20);
-ASMC MOTOR_B(2, 1.4, high_max_speed_AB, high_min_speed_AB, 2, 20);
-ASMC MOTOR_Z1(3, 0.8, high_max_speed_Z1, high_min_speed_Z1, 2, 25.4);
-ASMC MOTOR_Z2(5, 0.8, high_max_speed_Z2, high_min_speed_Z2, 2, 25.4);
-ASMC MOTOR_P(6, 0.2, high_max_speed_P, high_min_speed_P, 1, 305.2);
+int homing_speed_AB = 2000;
+int homing_speed_Z1 = 2000;
+int homing_speed_Z2 = 2000;
+int homing_speed_P = 900;
+
+ASMC MOTOR_A(1, 1.4, high_max_speed_AB, high_min_speed_AB, homing_speed_AB, 2, 20);
+ASMC MOTOR_B(2, 1.4, high_max_speed_AB, high_min_speed_AB, homing_speed_AB,2, 20);
+ASMC MOTOR_Z1(3, 0.8, high_max_speed_Z1, high_min_speed_Z1, homing_speed_Z1, 2, 25.4);
+ASMC MOTOR_Z2(5, 0.8, high_max_speed_Z2, high_min_speed_Z2, homing_speed_Z2, 2, 25.4);
+ASMC MOTOR_P(6, 0.2, high_max_speed_P, high_min_speed_P, homing_speed_P, 1, 305.2);
 
 bool isWorking = false;
 bool isT1Working = false;

@@ -26,7 +26,7 @@
 
 class ASMC {
 public:
-    ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned int  min_speed, int microstepping, float lead);
+    ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned int min_speed, unsigned int home_speed, int microstepping, float lead, int sample_time_BEMF = 7, int stall_detection_count = 3, int stall_detection_threshold = 0, bool newboard=false);
 
 public:
     void BootUpSPI();
@@ -70,14 +70,21 @@ public:
     const int _SPI_SCK = 52;//53; // Synchronous Clock
     const int _SPI_MOSI = 51;//50; // Master Output Slave Input
     int _MECHANICAL_HOME = 12;
-
     int _motor_number = 0;
     int _max_speed = 0; //max speed, unit = step/s
     int _min_speed = 0;
     int _mid_speed_1 = 0;
     int _mid_speed_2 = 0;
+    int _home_speed = 0;
     int POSITIVE = 1;
     int NEGATIVE = 0;
+    int _sampling_time_BEMF = 7; //0: 50us, 1: 100us, 2: 200us, 3: 300us, 4: 400us, 5: 600us, 6: 800us, 7: 1000us
+    int _stall_detection_count = 3; //0~3
+    int _stall_detection_threshold = 0; //0~255
+    int _status = 0; // status of motor
+    int _DOUBLE_CHECK_HOME_1 = A8;
+    int _DOUBLE_CHECK_HOME_2 = A9;
+
 
 private:
     int _FULL_STEP_PER_REVOLUTION = 200;
@@ -86,6 +93,7 @@ private:
     unsigned long _OCR_mid_speed_1 = 0;
     unsigned long _OCR_mid_speed_2 = 0;
     unsigned long _OCR_Update = 0;
+    unsigned long _OCR_home = 0;
     int _is_acceleration = 1; //acceleration: 1, no acceleration: 0
     float _acceleration_section_step_1 = 50;
     float _acceleration_section_step_2 = 100;
@@ -93,15 +101,11 @@ private:
     float _deceleration_position_1 = 0;
     float _deceleration_position_2 = 0;
     float _deceleration_position_3 = 0;
-
     int _count_moving_step = 0;
-
-    int _status = 0; // status of motor, 0 = Idle, 1 = Accel, 2 = const speed, 3 = decel
     float _current_position = 0;
     float _target_position = 0;
     float _distance = 0; //_target_position - _current_position
     float _abs_distance = 0;
-
     float _lead = 0;
     float _lead_one_step = 0;
     bool _sensing = false;
@@ -113,41 +117,13 @@ private:
 
 
 private:
-    const int _MAX_MOTOR_SPEED = 7000; //OCR: 285 
+    const int _MAX_MOTOR_SPEED = 7000; //OCR: 285
     const int _MIN_MOTOR_SPEED = 35; //OCR: 62500
     const unsigned long _CLOCK_FREQUENCY_IO = 2000000;
-
-private:
-    //BACK-UP VARIABLES
-    const int _RUNNING_DONE_MOTOR_1 = 10;
-    const int _RUNNING_DONE_MOTOR_2 = 20;
-    const int _RUNNING_DONE_MOTOR_3 = 30;
-    const int _RUNNING_DONE_MOTOR_4 = 40;
-
-    const int _HOME_DONE_MOTOR_1 = 1;
-    const int _HOME_DONE_MOTOR_2 = 2;
-    const int _HOME_DONE_MOTOR_3 = 3;
-    const int _HOME_DONE_MOTOR_4 = 4;
-
-    int _defaultCurrent = 1;
-    const int INITIAL_SPEED = 0;
-
     const int _MIN_SPEED_OCR = 62500;
     const int _MAX_SPEED_OCR = 3500;
 
-    int _curve_point_1 = 0;
-    int _curve_point_2 = 0;
-    int _curve_point_3 = 0;
-    int _curve_point_4 = 0;
-    int _curve_point_5 = 0;
-    int _curve_point_6 = 0;
 
-    int _scurve_case = 0;
-
-    unsigned long _OCR_after_min_speed = 0;
-    unsigned long _OCR_before_max_speed = 0;
-    int _after_min_speed = 0;
-    int _befor_max_speed = 0;
 };
 
 

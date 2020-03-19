@@ -4,11 +4,15 @@
 
 #include "ASMC.h"
 
-ASMC::ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned int min_speed, int microstepping, float lead){
+ASMC::ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned int min_speed, unsigned int home_speed, int microstepping, float lead, int sample_time_BEMF = 7, int stall_detection_count = 3, int stall_detection_threshold = 0, bool newboard=false){
     _MCURRENT = MotorCurrent;
     _microstepping = microstepping;
     _max_speed = max_speed;
     _min_speed = min_speed;
+    _home_speed = home_speed;
+    _sampling_time_BEMF = sample_time_BEMF;
+    _stall_detection_count = stall_detection_count;
+    _stall_detection_threshold = stall_detection_threshold;
 
     switch (MotorNumber){
         case 1:
@@ -185,11 +189,13 @@ ASMC::ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned
     _lead = lead; //lead: one revolution with microstepping (200 steps * microstepping) is converted to linear transition (mm)
     _lead_one_step = _lead / (_FULL_STEP_PER_REVOLUTION * pow(2, _microstepping)); //one step -> how long it is moves linearly in mm (unit: mm / step);
     _acceleration_section_step_1 = 1 * (_FULL_STEP_PER_REVOLUTION) * pow(2, _microstepping); // half revolution (step)
-    _acceleration_section_step_2 = 3 * (_FULL_STEP_PER_REVOLUTION) * pow(2, _microstepping); //
-    _acceleration_section_step_3 = 4 * (_FULL_STEP_PER_REVOLUTION) * pow(2, _microstepping);
+    _acceleration_section_step_2 = 2 * (_FULL_STEP_PER_REVOLUTION) * pow(2, _microstepping); //
+    _acceleration_section_step_3 = 3 * (_FULL_STEP_PER_REVOLUTION) * pow(2, _microstepping);
 }
 
 void ASMC::InitializeMotors() {
+    NEGATIVE = 0;
+    POSITIVE = 1;
     Serial.print(_motor_number); Serial.print(" / ");
     Serial.print(_STEP); Serial.print(" / ");
     Serial.print(_DIR); Serial.print(" / ");
@@ -200,6 +206,10 @@ void ASMC::InitializeMotors() {
     Serial.print(_RESET); Serial.println(" / ");
 
     SPI_DRV8711 SPIMOTOR(_SS, _SLEEP, _MCURRENT, _microstepping);
+
+    SPIMOTOR._TORQ_SMPLTH = _sampling_time_BEMF; //0: 50us, 1: 100us, 2: 200us, 3: 300us, 4: 400us, 5: 600us, 6: 800us, 7: 1000us
+    SPIMOTOR._STALL_SDCNT = _stall_detection_count;  //0~4, 1, 2, 4, 8
+    SPIMOTOR._STALL_SDTHR = _stall_detection_threshold; //0~255
 
     SPIMOTOR.Write_TORQUE(_MCURRENT);
     SPIMOTOR.Write_CTRL_Disable(_microstepping);
@@ -441,12 +451,13 @@ void ASMC::Begin(unsigned int max_speed, unsigned int initial_speed) {
     _min_speed = constrain(initial_speed, _MIN_MOTOR_SPEED, _MAX_MOTOR_SPEED);
     _max_speed = constrain(max_speed, _MIN_MOTOR_SPEED, _MAX_MOTOR_SPEED);
     _mid_speed_1 = _min_speed + (_max_speed - _min_speed) / 3;
-    _mid_speed_2 = _min_speed + (_max_speed - _min_speed) * (2 / 3);
+    _mid_speed_2 = _min_speed + (_max_speed - _min_speed) / 2;
 
     _OCR_max_speed = _CLOCK_FREQUENCY_IO / _max_speed;
     _OCR_min_speed = _CLOCK_FREQUENCY_IO / _min_speed;
     _OCR_mid_speed_1 = _CLOCK_FREQUENCY_IO / _mid_speed_1;
     _OCR_mid_speed_2 = _CLOCK_FREQUENCY_IO / _mid_speed_2;
+    _OCR_home = _CLOCK_FREQUENCY_IO / _home_speed;
     _OCR_Update = _OCR_min_speed;
 
     Serial.print("_OCR_max_speed : "); Serial.println(_OCR_max_speed);
@@ -580,7 +591,7 @@ int ASMC::isrPulse_TIMER1() {
             }
             break;
         case 4:
-            _OCR_Update = _OCR_mid_speed_2;
+            _OCR_Update = _OCR_home;
             break;
         default:
             break;
@@ -700,7 +711,7 @@ int ASMC::isrPulse_TIMER3() {
             }
             break;
         case 4:
-            _OCR_Update = _OCR_mid_speed_2;
+            _OCR_Update = _OCR_home;
             break;
         default:
             break;
@@ -820,7 +831,7 @@ int ASMC::isrPulse_TIMER4() {
             }
             break;
         case 4:
-            _OCR_Update = _OCR_mid_speed_2;
+            _OCR_Update = _OCR_home;
             break;
         default:
             break;
@@ -938,7 +949,7 @@ int ASMC::isrPulse_TIMER5() {
             }
             break;
         case 4:
-            _OCR_Update = _OCR_mid_speed_2;
+            _OCR_Update = _OCR_home;
             break;
         default:
             break;

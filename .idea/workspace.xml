@@ -11,8 +11,15 @@
   <component name="ChangeListManager">
     <list default="true" id="4ffcad34-11d4-4060-9f04-d39aa9410f77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASMC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ASMC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASMC.h" beforeDir="false" afterPath="$PROJECT_DIR$/ASMC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Register_DRV8711.h" beforeDir="false" afterPath="$PROJECT_DIR$/Register_DRV8711.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPI_DRV8711.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SPI_DRV8711.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPI_DRV8711.h" beforeDir="false" afterPath="$PROJECT_DIR$/SPI_DRV8711.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example_asmc/globals.h" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_asmc/globals.h" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,18 +46,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/GFProject/algorithm_cpp_practice" />
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
   </component>
@@ -68,6 +76,11 @@
       <workItem from="1578033135757" duration="671000" />
       <workItem from="1578176239347" duration="2285000" />
       <workItem from="1578200776677" duration="86000" />
+      <workItem from="1579121866259" duration="762000" />
+      <workItem from="1583943005027" duration="1746000" />
+      <workItem from="1584029865932" duration="3093000" />
+      <workItem from="1584115247578" duration="2492000" />
+      <workItem from="1584493880786" duration="1147000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1578033490578</created>
@@ -123,6 +136,19 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
