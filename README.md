@@ -58,12 +58,6 @@ After finishing all set-up of register in DRV8711, you can write 1 on ENABLE reg
 By using this methodology, you can protect your circuit board and motor from unexpected current draw from power source.
 Please refer to SPI_DRV8711.cpp.
 
-<<<<<<< HEAD
-**5. Stall/Fault Detection**
-- There are three main parameters of Stall and Falut detection.
--  
-=======
-
 **5. Stall/Fault Detection**
 
 - There are three main parameters of Stall and Falut detection.
@@ -71,4 +65,3 @@ Please refer to SPI_DRV8711.cpp.
 2) Stall Detection Count by Inside Counter in DRV8711 (Please look at the page 23 in '/source/drv8711.pdf'.) - 0: Count 1, 1: Count 2, 2: Count 4, 3: Count 8 
 3) Stall Detection Threshold - 0 to 255 -> higher value, more sensitive to stall
 
->>>>>>> 61168442869cac98de01d168e7409d146f666fae

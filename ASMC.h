@@ -107,20 +107,13 @@ private:
     float _deceleration_position_1 = 0;
     float _deceleration_position_2 = 0;
     float _deceleration_position_3 = 0;
-<<<<<<< HEAD
-=======
     float _deceleration_position_4 = 0;
     float _deceleration_position_5 = 0;
->>>>>>> 61168442869cac98de01d168e7409d146f666fae
     int _count_moving_step = 0;
     float _current_position = 0;
     float _target_position = 0;
     float _distance = 0; //_target_position - _current_position
     float _abs_distance = 0;
-<<<<<<< HEAD
-    float _lead = 0;
-=======
->>>>>>> 61168442869cac98de01d168e7409d146f666fae
     float _lead_one_step = 0;
     bool isHoming = false;
     bool isPumpHoming = false;

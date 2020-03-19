@@ -195,13 +195,6 @@ ASMC::ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned
     _target_position = 0;
     _deceleration_position_1 = 0;
     _deceleration_position_2 = 0;
-<<<<<<< HEAD
-    _lead = lead; //lead: one revolution with microstepping (200 steps * microstepping) is converted to linear transition (mm)
-    _lead_one_step = _lead / (_FULL_STEP_PER_REVOLUTION * pow(2, _microstepping)); //one step -> how long it is moves linearly in mm (unit: mm / step);
-    _acceleration_section_step_1 = 1 * (_FULL_STEP_PER_REVOLUTION) * pow(2, _microstepping); // half revolution (step)
-    _acceleration_section_step_2 = 2 * (_FULL_STEP_PER_REVOLUTION) * pow(2, _microstepping); //
-    _acceleration_section_step_3 = 3 * (_FULL_STEP_PER_REVOLUTION) * pow(2, _microstepping);
-=======
     _deceleration_position_3 = 0;
     _deceleration_position_4 = 0;
     _deceleration_position_5 = 0;
@@ -215,7 +208,6 @@ ASMC::ASMC(int MotorNumber, float MotorCurrent, unsigned int max_speed, unsigned
     _acceleration_section_step_3 = 2 * 200 * (2 << (_microstepping - 1));
     _acceleration_section_step_4 = 2.5 * 200 * (2 << (_microstepping - 1));
     _acceleration_section_step_5 = 3 * 200 * (2 << (_microstepping - 1));
->>>>>>> 61168442869cac98de01d168e7409d146f666fae
 }
 
 void ASMC::InitializeMotors() {
@@ -493,18 +485,6 @@ void ASMC::Begin(unsigned int max_speed, unsigned int min_speed, unsigned int ho
         _min_speed = 7000;
     }
 
-<<<<<<< HEAD
-    _min_speed = constrain(initial_speed, _MIN_MOTOR_SPEED, _MAX_MOTOR_SPEED);
-    _max_speed = constrain(max_speed, _MIN_MOTOR_SPEED, _MAX_MOTOR_SPEED);
-    _mid_speed_1 = _min_speed + (_max_speed - _min_speed) / 3;
-    _mid_speed_2 = _min_speed + (_max_speed - _min_speed) / 2;
-
-    _OCR_max_speed = _CLOCK_FREQUENCY_IO / _max_speed;
-    _OCR_min_speed = _CLOCK_FREQUENCY_IO / _min_speed;
-    _OCR_mid_speed_1 = _CLOCK_FREQUENCY_IO / _mid_speed_1;
-    _OCR_mid_speed_2 = _CLOCK_FREQUENCY_IO / _mid_speed_2;
-    _OCR_home = _CLOCK_FREQUENCY_IO / _home_speed;
-=======
     if (max_speed < 35) {
         _max_speed = 35;
     }
@@ -521,7 +501,6 @@ void ASMC::Begin(unsigned int max_speed, unsigned int min_speed, unsigned int ho
     _OCR_mid_speed_3 = 2000000 / (_max_speed - (_max_speed - _min_speed) / 2);
     _OCR_mid_speed_4 = 2000000 / (_max_speed - (_max_speed - _min_speed) / 4);
     _OCR_home = 2000000 / _home_speed;
->>>>>>> 61168442869cac98de01d168e7409d146f666fae
     _OCR_Update = _OCR_min_speed;
 
     Serial.print("%_OCR_max_speed : "); Serial.println(_OCR_max_speed);
@@ -664,8 +643,6 @@ int ASMC::isrPulse_TIMER1() {
             }
             break;
         case 4:
-<<<<<<< HEAD
-=======
             if (_count_moving_step > _acceleration_section_step_1 && _count_moving_step < _deceleration_position_1) {
                 if (_count_moving_step > _acceleration_section_step_2 && _count_moving_step < _deceleration_position_2) {
                     if (_count_moving_step > _acceleration_section_step_3 && _count_moving_step < _deceleration_position_3) {
@@ -717,7 +694,6 @@ int ASMC::isrPulse_TIMER1() {
             }
             break;
         case 6:
->>>>>>> 61168442869cac98de01d168e7409d146f666fae
             _OCR_Update = _OCR_home;
             break;
         default:
@@ -838,8 +814,6 @@ int ASMC::isrPulse_TIMER3() {
             }
             break;
         case 4:
-<<<<<<< HEAD
-=======
             if (_count_moving_step > _acceleration_section_step_1 && _count_moving_step < _deceleration_position_1) {
                 if (_count_moving_step > _acceleration_section_step_2 && _count_moving_step < _deceleration_position_2) {
                     if (_count_moving_step > _acceleration_section_step_3 && _count_moving_step < _deceleration_position_3) {
@@ -891,7 +865,6 @@ int ASMC::isrPulse_TIMER3() {
             }
             break;
         case 6:
->>>>>>> 61168442869cac98de01d168e7409d146f666fae
             _OCR_Update = _OCR_home;
             break;
         default:
@@ -1012,8 +985,6 @@ int ASMC::isrPulse_TIMER4() {
             }
             break;
         case 4:
-<<<<<<< HEAD
-=======
             if (_count_moving_step > _acceleration_section_step_1 && _count_moving_step < _deceleration_position_1) {
                 if (_count_moving_step > _acceleration_section_step_2 && _count_moving_step < _deceleration_position_2) {
                     if (_count_moving_step > _acceleration_section_step_3 && _count_moving_step < _deceleration_position_3) {
@@ -1065,7 +1036,6 @@ int ASMC::isrPulse_TIMER4() {
             }
             break;
         case 6:
->>>>>>> 61168442869cac98de01d168e7409d146f666fae
             _OCR_Update = _OCR_home;
             break;
         default:
@@ -1184,8 +1154,6 @@ int ASMC::isrPulse_TIMER5() {
             }
             break;
         case 4:
-<<<<<<< HEAD
-=======
             if (_count_moving_step > _acceleration_section_step_1 && _count_moving_step < _deceleration_position_1) {
                 if (_count_moving_step > _acceleration_section_step_2 && _count_moving_step < _deceleration_position_2) {
                     if (_count_moving_step > _acceleration_section_step_3 && _count_moving_step < _deceleration_position_3) {
@@ -1237,7 +1205,6 @@ int ASMC::isrPulse_TIMER5() {
             }
             break;
         case 6:
->>>>>>> 61168442869cac98de01d168e7409d146f666fae
             _OCR_Update = _OCR_home;
             break;
         default:
